@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>免費寶寶體驗包</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #ff6f61;
+        }
+        .header h1 {
+            font-size: 2.8em;
+            color: #ff6f61;
+            margin: 0;
+        }
+        .header h2 {
+            font-size: 1.3em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 20px 10px;
+        }
+        .content h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            border-left: 5px solid #ff6f61;
+            padding-left: 10px;
+        }
+        .bullet-points ul {
+            list-style: none;
+            padding: 0;
+        }
+        .bullet-points ul li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            color: #555;
+            font-size: 1.1em;
+        }
+        .bullet-points ul li::before {
+            content: "✔";
+            color: #ff6f61;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .cta-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-section button {
+            background-color: #ff6f61;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cta-section button:hover {
+            background-color: #e55a50;
+        }
+        .trust-elements {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .trust-elements p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .trust-elements img {
+            max-width: 120px;
+            margin: 0 10px;
+        }
+        .form-section {
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-section h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-section input {
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-section button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 12px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-section button:hover {
+            background-color: #e55a50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>3步驟輕鬆領取！</h1>
+            <h2>48小時內寄送專屬寶寶的體驗好禮！</h2>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h3>為什麼選擇我們的體驗包？</h3>
+            <div class="bullet-points">
+                <ul>
+                    <li>免費！5款寶寶必備產品，7天內幫助您找到最適合的品牌。</li>
+                    <li>僅需3步驟：填寫表單 → 提交 → 等待收貨。</li>
+                    <li>體驗5大熱門品牌！一週內感受寶寶用品的真正效果。</li>
+                    <li>快速申請，1分鐘完成，節省您的寶貴時間。</li>
+                    <li>10天內幫您測試最優質的寶寶產品！</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Trust Elements Section -->
+        <div class="trust-elements">
+            <p><strong>真實用戶回饋：</strong></p>
+            <p>「試用體驗包讓我快速找到適合寶寶的產品，再也不擔心選擇錯誤！」 – 媽媽A</p>
+            <p><strong>合作品牌：</strong></p>
+            <img src="https://via.placeholder.com/120" alt="Brand 1">
+            <img src="https://via.placeholder.com/120" alt="Brand 2">
+            <img src="https://via.placeholder.com/120" alt="Brand 3">
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <button>立即申請免費體驗包</button>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h3>簡單填寫即可領取</h3>
+            <form>
+                <input type="text" placeholder="姓名" required>
+                <input type="email" placeholder="電子郵件" required>
+                <input type="text" placeholder="地址" required>
+                <input type="text" placeholder="寶寶年齡段（選填）">
+                <button type="submit">提交申請</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
