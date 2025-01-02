@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幼兒專屬護航計劃</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: linear-gradient(to right, #ffcc99, #ff9966);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            color: #ff6633;
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta button {
+            padding: 15px 30px;
+            background: #ff6633;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cta button:hover {
+            background: #e65c00;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .list-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 第一頁：文案頁面 -->
+    <div class="container" id="page-1">
+        <header>
+            <h1>幼兒專屬護航計劃</h1>
+            <p>給每位寶貝專屬呵護，守護孩子健康成長！</p>
+        </header>
+        <h2 class="section-title">十大成交激素</h2>
+        <ul class="content">
+            <li><strong>獨特性：</strong>全台唯一針對1-6歲孩子設計的護航系統。</li>
+            <li><strong>緊迫性：</strong>限量50名，每月僅開放名額，超過就要等到下一季。</li>
+            <li><strong>社會認同：</strong>98%的父母見證孩子的正向改變。</li>
+            <li><strong>免費價值：</strong>贈市價$5000的「幼兒專屬健康分析」。</li>
+            <li><strong>好奇心：</strong>揭開孩子未來潛能的答案。</li>
+            <li><strong>獨家優惠：</strong>新年推出「雙月護航試用方案」。</li>
+            <li><strong>超越期望：</strong>聰明大腦、強壯體魄、健全心理全方位提升。</li>
+            <li><strong>安全保障：</strong>國際專家認證，完全符合安全標準。</li>
+            <li><strong>真實案例：</strong>「3個月內，孩子更自信、更專注！」</li>
+            <li><strong>行動呼籲：</strong>把握寶貝成長的黃金時期！</li>
+        </ul>
+        <div class="cta">
+            <button onclick="goToPage2()">立即報名</button>
+        </div>
+    </div>
+
+    <!-- 第二頁：報名頁面 -->
+    <div class="container" id="page-2" style="display: none;">
+        <h2>立即報名</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">電話：</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="notes">備註：</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+            <button type="button" onclick="submitForm()">提交</button>
+        </form>
+    </div>
+
+    <!-- 第三頁：名單管理頁面 -->
+    <div class="container" id="page-3" style="display: none;">
+        <h2>名單管理</h2>
+        <div id="list-container"></div>
+        <button onclick="goToPage1()">返回首頁</button>
+    </div>
+
+    <script>
+        const storageKey = "customerList";
+
+        function goToPage2() {
+            document.getElementById("page-1").style.display = "none";
+            document.getElementById("page-2").style.display = "block";
+        }
+
+        function goToPage1() {
+            document.getElementById("page-3").style.display = "none";
+            document.getElementById("page-1").style.display = "block";
+        }
+
+        function submitForm() {
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const notes = document.getElementById("notes").value.trim();
+
+            if (name && phone && email) {
+                const newCustomer = { name, phone, email, notes };
+                const customerList = JSON.parse(localStorage.getItem(storageKey)) || [];
+                customerList.push(newCustomer);
+                localStorage.setItem(storageKey, JSON.stringify(customerList));
+
+                document.getElementById("page-2").style.display = "none";
+                loadCustomerList();
+                document.getElementById("page-3").style.display = "block";
+            } else {
+                alert("請填寫所有必填欄位！");
+            }
+        }
+
+        function loadCustomerList() {
+            const listContainer = document.getElementById("list-container");
+            const customerList = JSON.parse(localStorage.getItem(storageKey)) || [];
+            listContainer.innerHTML = "";
+
+            if (customerList.length === 0) {
+                listContainer.innerHTML = "<p>目前沒有名單。</p>";
+                return;
+            }
+
+            customerList.forEach((customer, index) => {
+                const listItem = document.createElement("div");
+                listItem.className = "list-item";
+
+                listItem.innerHTML = `
+                    <div>
+                        <strong>${customer.name}</strong> (${customer.phone}, ${customer.email}) <br>
+                        備註：${customer.notes || "無"}
+                    </div>
+                `;
+                listContainer.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>
